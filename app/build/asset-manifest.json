@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/scrolledtoedge/static/css/main.540638d2.chunk.css",
+    "main.js": "/scrolledtoedge/static/js/main.ab306397.chunk.js",
+    "main.js.map": "/scrolledtoedge/static/js/main.ab306397.chunk.js.map",
+    "runtime-main.js": "/scrolledtoedge/static/js/runtime-main.76db28f1.js",
+    "runtime-main.js.map": "/scrolledtoedge/static/js/runtime-main.76db28f1.js.map",
+    "static/js/2.e513a84d.chunk.js": "/scrolledtoedge/static/js/2.e513a84d.chunk.js",
+    "static/js/2.e513a84d.chunk.js.map": "/scrolledtoedge/static/js/2.e513a84d.chunk.js.map",
+    "static/js/3.435602aa.chunk.js": "/scrolledtoedge/static/js/3.435602aa.chunk.js",
+    "static/js/3.435602aa.chunk.js.map": "/scrolledtoedge/static/js/3.435602aa.chunk.js.map",
+    "index.html": "/scrolledtoedge/index.html",
+    "static/css/main.540638d2.chunk.css.map": "/scrolledtoedge/static/css/main.540638d2.chunk.css.map",
+    "static/js/2.e513a84d.chunk.js.LICENSE.txt": "/scrolledtoedge/static/js/2.e513a84d.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.76db28f1.js",
+    "static/js/2.e513a84d.chunk.js",
+    "static/css/main.540638d2.chunk.css",
+    "static/js/main.ab306397.chunk.js"
+  ]
+}
