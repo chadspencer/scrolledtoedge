@@ -1,6 +1,6 @@
 # scrolled-to-edge
 
-> A simple react hook and component to detect when the scroll position of window or container is at the top, bottom, left or right.
+> A simple react hook and component to detect when the scroll position of the window or a container is at the top, bottom, left or right.
 
 <p>Version: 0.0.1</p>
 
