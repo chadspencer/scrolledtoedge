@@ -2,20 +2,28 @@ import React, { useEffect, useState } from 'react'
 
 import { ScrolledToEdge, useScrolledToEdge } from 'scrolled-to-edge/dist';
 import classNames from 'classnames/bind';
+import ReactMarkdown from 'react-markdown';
 import Prism from "prismjs";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGithub, faNpm } from '@fortawesome/free-brands-svg-icons';
 
 import 'prismjs/themes/prism-okaidia.css';
+import readmeFile from 'scrolled-to-edge/README.md'
 
 const App = () => {
   const [windowScrollPosition, setWindowScrollPosition] = useState('somewhere in the middle');
   const [examplePosition, setExamplePosition] = useState(null);
   const [navPosition, setNavPosition] = useState(null);
+  const [readme, setReadme] = useState(null);
   
   useEffect(() => {
     Prism.highlightAll();
+    fetch(readmeFile).then((response) => response.text()).then((text) => {
+      setReadme(text);
+    });
   });
+
+  console.log(readme);
 
   useScrolledToEdge(e => {
     if (e.y === 'start') {
@@ -46,7 +54,7 @@ const App = () => {
           <a href="https://www.npmjs.com/package/scrolled-to-edge" target="_blank"><FontAwesomeIcon icon={faNpm} /></a>
         </nav>
       </header>
-      <div class="toast">This page is scrolled {windowScrollPosition}.</div>
+      <div className="toast">This page is scrolled {windowScrollPosition}.</div>
       <section className="hero">
         <article>
           <h2>Detect when scroll position is at the top, bottom, left or right.</h2>
@@ -60,7 +68,11 @@ const App = () => {
             </div>
             <pre>
               <code className="language-javascript">
-                {`// Hook Example
+                {`// Install
+npm i scrolled-to-edge
+yarn add scrolled-to-edge
+
+// Hook Example
 import { useScrolledToEdge } from 'scrolled-to-edge';
 
 const App = () => {
@@ -95,7 +107,7 @@ const App = () => {
           <h3>Container Example</h3>
           <p>The most common use case I've ran into for needing this component is to conditionally render shadows on a container. Having shadows on a scrollable container subtly let's the user know what to do, especially when scrollbars are not present. It's really nice to hide those shadows when you're at the start or end of the container too.</p>
           <p>A little something like this:</p>
-          <div class="example">
+          <div className="example">
             <div>
               Header
               <nav className={navClasses}>
@@ -127,6 +139,8 @@ const App = () => {
             </div>
             <div>Footer</div>
           </div>
+          {/* <h3>Documentation</h3>
+          <ReactMarkdown children={readme} /> */}
         </article>
       </section>
       <footer>

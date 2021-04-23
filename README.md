@@ -42,7 +42,7 @@ The hook receives in an inline callback function, which is required, and an opti
 
 A null value indicates the axis is not overflowing or not at the start or end.
 
-Additionally, the hook can be assigned directly to an element via a ref and the scroll listener will be attached to that element. When using this method the attached component must be able to receive a <code>ref</code>, so no functional components will work without using <code>forwardRef</code>. If you are consuming a functional component that you cannot add <code>forwardRef</code> to you must use a wrapper element to attach the <code>ref</code> to and style that container accordingly.
+Additionally, the hook can be assigned directly to an element via a <code>ref</code> and the scroll listener will be attached to that element. When using this method the attached component must be able to receive a <code>ref</code>, so functional components will work only when using <code>forwardRef</code>. If you are consuming a functional component that you cannot add <code>forwardRef</code> to, you must use a wrapper element to attach the <code>ref</code> to and style that container accordingly.
 
 ```
 import { useScrolledToEdge } from 'scrolled-to-edge';
