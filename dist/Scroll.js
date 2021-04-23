@@ -12,14 +12,14 @@ var _propTypes = require('prop-types');
 
 var _propTypes2 = _interopRequireDefault(_propTypes);
 
-var _Scroll = require('./hook/Scroll');
+var _hook = require('./hook');
 
-var _Scroll2 = _interopRequireDefault(_Scroll);
+var _hook2 = _interopRequireDefault(_hook);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var ScrolledToEdge = function ScrolledToEdge(props) {
-  var container = (0, _Scroll2.default)(props.onChange, props.offset);
+  var container = (0, _hook2.default)(props.onChange, props.offset);
   var firstChild = _react2.default.Children.toArray(props.children)[0];
   if (!firstChild) return null;
 

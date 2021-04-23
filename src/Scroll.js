@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import useScrolledToEdge from './hook/Scroll';
+import useScrolledToEdge from './hook';
 
 const ScrolledToEdge = props => {
   const container = useScrolledToEdge(props.onChange, props.offset);

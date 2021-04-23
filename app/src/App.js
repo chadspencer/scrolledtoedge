@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 
-import { useScrolledToEdge } from './dist';
+import { useScrolledToEdge } from 'scrolled-to-edge/dist';
 import Prism from "prismjs";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGithub, faNpm } from '@fortawesome/free-brands-svg-icons';
@@ -50,7 +50,7 @@ const App = () => {
 import { useScrolledToEdge } from 'scrolled-to-edge';
 
 const App = () => {
-  scrollingContainer = useScrolledToEdge(e => console.log(e));
+  scrollingContainer = useScrolledToEdge(e => console.log(e.x, e.y));
 
   return (
     <div className="scrolling-container" ref="scrollingContainer">
@@ -64,7 +64,7 @@ import { ScrolledToEdge } from 'scrolled-to-edge';
 
 const App = () => {
   return (
-    <ScrolledToEdge onChange={e => console.log(e)}>
+    <ScrolledToEdge onChange={e => console.log(e.x, e.y)}>
       <div className="scrolling-container">
         // Content
       </div>
