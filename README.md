@@ -57,7 +57,7 @@ const container = useScrolledToEdge(callback, offset);
 ```
 useBottomScrollListener(
   // Required callback that is invoked when an edge is scrolled to.
-  callback: () => void,
+  onChange: () => void,
   // Optional offset value in pixels from each edge.
   offset?: number
 );
@@ -79,7 +79,7 @@ import { ScrolledToEdge } from 'scrolled-to-edge';
 
 | Property          |           Type           |     Default     | Description                                                                                                                                                                                                                                                                                 |
 | ----------------- | :----------------------: | :-------------: | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| callback          |         function         |      null       | <b>Required</b> callback that is invoked when an edge is scrolled to.
+| onChange         |         function         |      null       | <b>Required</b> callback that is invoked when an edge is scrolled to.
 | offset            |          number          |        0        | Optional offset value in pixels from each edge 
 
 <h2>Examples</h2>
