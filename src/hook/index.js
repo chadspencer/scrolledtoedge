@@ -14,6 +14,7 @@ const useScrolledToEdge = (callback, offsetValue) => {
     } else {
       window.addEventListener('scroll', handleScroll);
     }
+    window.addEventListener('resize', handleScroll);
 
     handleScroll();
 
@@ -23,6 +24,7 @@ const useScrolledToEdge = (callback, offsetValue) => {
       } else {
         window.removeEventListener('scroll', handleScroll);
       }
+      window.removeEventListener('resize', handleScroll);
     };
   });
 
@@ -51,8 +53,10 @@ const useScrolledToEdge = (callback, offsetValue) => {
       } else if (scrollPositionX + wrapperWidth + offset >= containerWidth) {
         setX('end');
       } else {
-        setX(null);
+        setX('middle');
       }
+    } else {
+      setX(null);
     }
 
     if (containerHeight > wrapperHeight) {
@@ -61,12 +65,14 @@ const useScrolledToEdge = (callback, offsetValue) => {
       } else if (scrollPositionY + wrapperHeight + offset >= containerHeight) {
         setY('end');
       } else {
-        setY(null);
+        setY('middle');
       }
+    } else {
+      setY(null);
     }
   };
 
   return container;
-}
+};
 
 export default useScrolledToEdge;

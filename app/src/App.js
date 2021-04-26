@@ -11,7 +11,7 @@ import 'prismjs/themes/prism-okaidia.css';
 import readmeFile from 'scrolled-to-edge/README.md'
 
 const App = () => {
-  const [windowScrollPosition, setWindowScrollPosition] = useState('somewhere in the middle');
+  const [windowScrollPosition, setWindowScrollPosition] = useState(null);
   const [examplePosition, setExamplePosition] = useState(null);
   const [navPosition, setNavPosition] = useState(null);
   const [readme, setReadme] = useState(null);
@@ -23,26 +23,29 @@ const App = () => {
     });
   });
 
-  console.log(readme);
-
   useScrolledToEdge(e => {
     if (e.y === 'start') {
       setWindowScrollPosition('at the top');
-    } else if (e.y === 'end') {
+    }
+    if (e.y === 'end') {
       setWindowScrollPosition('at the bottom');
-    } else {
+    }
+    if (e.y === 'middle') {
       setWindowScrollPosition('somewhere in the middle');
+    }
+    if (e.y === null) {
+      setWindowScrollPosition(null);
     }
   });
 
   const exampleClasses = classNames({
-    'at-top': examplePosition === 'start',
-    'at-bottom': examplePosition === 'end'
+    'at-top': examplePosition === 'start' || examplePosition === null,
+    'at-bottom': examplePosition === 'end' || examplePosition === null
   });
 
   const navClasses = classNames({
-    'at-left': navPosition === 'start',
-    'at-right': navPosition === 'end'
+    'at-left': navPosition === 'start' || navPosition === null,
+    'at-right': navPosition === 'end' || navPosition === null
   });
 
   return (
@@ -131,9 +134,9 @@ const App = () => {
               <ScrolledToEdge onChange={e => setExamplePosition(e.y)}>
                 <div>
                   <p>Bacon ipsum dolor amet salami pork belly chislic fatback jowl turkey. Tongue prosciutto beef ribs bacon chislic ham ground round filet mignon, pork pork belly chuck hamburger pork chop. Meatloaf chuck strip steak pancetta tri-tip fatback biltong chicken pork belly short ribs short loin landjaeger pork chop. Flank tail spare ribs, salami biltong prosciutto tenderloin brisket buffalo boudin swine ground round rump chislic beef ribs. Andouille cupim pastrami hamburger pancetta kielbasa. Pastrami corned beef pig shank alcatra, turkey cow ribeye landjaeger kevin burgdoggen. Cupim tenderloin pig biltong.</p>
-                  <p>Venison capicola doner kielbasa sausage. Fatback pig pork loin frankfurter shankle shank, kevin porchetta prosciutto ham hock. Chislic bacon sirloin pig turkey landjaeger chuck. Beef ribs turkey porchetta, jerky bacon salami pancetta alcatra fatback ham chuck leberkas rump bresaola doner.</p>
-                  <p>Picanha sausage strip steak frankfurter rump tri-tip, pork pork chop drumstick tail. Brisket beef ribs ham hock capicola, shoulder doner turducken short ribs. Turkey pork belly rump bresaola leberkas. Tri-tip buffalo drumstick, t-bone turkey tail brisket pork chop. Sirloin drumstick andouille chicken t-bone spare ribs swine jowl jerky tri-tip. Porchetta tail bacon pork loin frankfurter.</p>
-                  <p>Pork belly shankle t-bone porchetta ham hock ball tip chislic tongue alcatra landjaeger capicola. Ribeye fatback buffalo pork belly filet mignon. Cow ribeye jowl alcatra. Beef ribs corned beef hamburger bresaola turkey bacon alcatra sausage chicken ribeye jerky biltong cow. Pork belly cow tongue pancetta alcatra salami meatloaf chuck, shoulder doner kevin beef brisket ham hock. Drumstick burgdoggen salami, short loin pork belly kielbasa ground round pork beef ribs porchetta alcatra andouille biltong spare ribs capicola.</p>
+                  <p>Bacon ipsum dolor amet salami pork belly chislic fatback jowl turkey. Tongue prosciutto beef ribs bacon chislic ham ground round filet mignon, pork pork belly chuck hamburger pork chop. Meatloaf chuck strip steak pancetta tri-tip fatback biltong chicken pork belly short ribs short loin landjaeger pork chop. Flank tail spare ribs, salami biltong prosciutto tenderloin brisket buffalo boudin swine ground round rump chislic beef ribs. Andouille cupim pastrami hamburger pancetta kielbasa. Pastrami corned beef pig shank alcatra, turkey cow ribeye landjaeger kevin burgdoggen. Cupim tenderloin pig biltong.</p>
+                  <p>Bacon ipsum dolor amet salami pork belly chislic fatback jowl turkey. Tongue prosciutto beef ribs bacon chislic ham ground round filet mignon, pork pork belly chuck hamburger pork chop. Meatloaf chuck strip steak pancetta tri-tip fatback biltong chicken pork belly short ribs short loin landjaeger pork chop. Flank tail spare ribs, salami biltong prosciutto tenderloin brisket buffalo boudin swine ground round rump chislic beef ribs. Andouille cupim pastrami hamburger pancetta kielbasa. Pastrami corned beef pig shank alcatra, turkey cow ribeye landjaeger kevin burgdoggen. Cupim tenderloin pig biltong.</p>
+                  <p>Bacon ipsum dolor amet salami pork belly chislic fatback jowl turkey. Tongue prosciutto beef ribs bacon chislic ham ground round filet mignon, pork pork belly chuck hamburger pork chop. Meatloaf chuck strip steak pancetta tri-tip fatback biltong chicken pork belly short ribs short loin landjaeger pork chop. Flank tail spare ribs, salami biltong prosciutto tenderloin brisket buffalo boudin swine ground round rump chislic beef ribs. Andouille cupim pastrami hamburger pancetta kielbasa. Pastrami corned beef pig shank alcatra, turkey cow ribeye landjaeger kevin burgdoggen. Cupim tenderloin pig biltong.</p>
                 </div>
               </ScrolledToEdge>
             </div>
