@@ -46,11 +46,10 @@ const useScrolledToEdge = (callback, offsetValue) => {
       wrapperHeight = container.current.offsetHeight;
       wrapperWidth = container.current.offsetWidth;
     }
-
     if (containerWidth > wrapperWidth) {
       if (scrollPositionX <= 0 + offset) {
         setX('start');
-      } else if (scrollPositionX + wrapperWidth + offset >= containerWidth) {
+      } else if (scrollPositionX + wrapperWidth + offset >= containerWidth - 1) {
         setX('end');
       } else {
         setX('middle');
@@ -62,7 +61,7 @@ const useScrolledToEdge = (callback, offsetValue) => {
     if (containerHeight > wrapperHeight) {
       if (scrollPositionY <= 0 + offset) {
         setY('start');
-      } else if (scrollPositionY + wrapperHeight + offset >= containerHeight) {
+      } else if (scrollPositionY + wrapperHeight + offset >= containerHeight - 1) {
         setY('end');
       } else {
         setY('middle');
