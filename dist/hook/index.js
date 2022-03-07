@@ -48,12 +48,12 @@ var useScrolledToEdge = function useScrolledToEdge(callback, offsetValue) {
   }, [x, y]);
 
   var handleScroll = function handleScroll() {
-    var containerHeight = document.body.offsetHeight;
+    var containerHeight = document.body.scrollHeight;
     var containerWidth = document.body.scrollWidth;
     var scrollPositionX = window.scrollX;
     var scrollPositionY = window.scrollY;
-    var wrapperHeight = window.innerHeight;
-    var wrapperWidth = window.innerWidth;
+    var wrapperHeight = document.body.offsetHeight;
+    var wrapperWidth = document.body.offsetWidth;
 
     if (container.current != null) {
       containerHeight = container.current.scrollHeight;

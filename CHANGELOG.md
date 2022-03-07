@@ -1,3 +1,6 @@
+## [1.0.5] - 2022-03-07
+- Fixed window height calculations.
+
 ## [1.0.4] - 2021-05-13
 - Pixel rounding fix for end trigger.
 

@@ -31,12 +31,12 @@ const useScrolledToEdge = (callback, offsetValue) => {
   useEffect(() => callback({x, y}), [x, y]);
 
   const handleScroll = () => {
-    let containerHeight = document.body.offsetHeight;
+    let containerHeight = document.body.scrollHeight;
     let containerWidth = document.body.scrollWidth;
     let scrollPositionX = window.scrollX;
     let scrollPositionY = window.scrollY;
-    let wrapperHeight = window.innerHeight;
-    let wrapperWidth = window.innerWidth;
+    let wrapperHeight = document.body.offsetHeight;
+    let wrapperWidth = document.body.offsetWidth;
 
     if (container.current != null) {
       containerHeight = container.current.scrollHeight;
